@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleUserDataException(UserDataException e) {
         List<String> details = new ArrayList<>();
         details.add(e.getLocalizedMessage());
-        ErrorResponse error = new ErrorResponse("Server Error", details);
+        ErrorResponse error = new ErrorResponse("Internal Server Error", details);
         return new ResponseEntity(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleUserDataException(Exception e) {
         List<String> details = new ArrayList<>();
         details.add(e.getLocalizedMessage());
-        ErrorResponse error = new ErrorResponse("Server Error", details);
+        ErrorResponse error = new ErrorResponse("Internal Server Error", details);
         return new ResponseEntity(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
